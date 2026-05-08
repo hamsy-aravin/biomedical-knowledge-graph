@@ -1,0 +1,520 @@
+{
+  "version": "3.0.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": 58,
+          "y": 52.00000000000001
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 300,
+          "y": 66
+        }
+      },
+      {
+        "id": "n:4",
+        "position": {
+          "x": 242.29653386757417,
+          "y": 263.0313105152942
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "3.0.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "Patient",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "PatientID",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "Age",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:3",
+                "token": "Gender",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:7",
+                "token": "Gene X Expression",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:8",
+                "token": "Gene Y Expression",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "DiseaseStatus",
+            "properties": [
+              {
+                "$id": "p:4",
+                "token": "DiseaseStatus",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "SmokingStatus",
+            "properties": [
+              {
+                "$id": "p:5",
+                "token": "SmokingStatus",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:4",
+            "token": "TreatmentResponse",
+            "properties": [
+              {
+                "$id": "p:6",
+                "token": "TreatmentResponse",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:1",
+            "token": "HAS_DISEASE_STATUS",
+            "properties": []
+          },
+          {
+            "$id": "rt:2",
+            "token": "HAS_SMOKING_STATUS",
+            "properties": []
+          },
+          {
+            "$id": "rt:3",
+            "token": "HAS_TREATMENT_RESPONSE",
+            "properties": []
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          },
+          {
+            "$id": "n:4",
+            "labels": [
+              {
+                "$ref": "#nl:4"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:4"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "PatientID_Patient_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "DiseaseStatus_DiseaseStatus_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "c:4",
+            "name": "TreatmentResponse_TreatmentResponse_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:6"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "SmokingStatus_SmokingStatus_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:5"
+              }
+            ]
+          }
+        ],
+        "indexes": []
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:1"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:4"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:5"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "keyProperties": [
+            {
+              "$ref": "#p:6"
+            }
+          ]
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "Gene Expression Analysis and Disease Relationship.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "PatientID",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "Age",
+                "sample": "45",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "Gender",
+                "sample": "0",
+                "recommendedType": {
+                  "type": "boolean"
+                }
+              },
+              {
+                "name": "Gene_X_Expression",
+                "sample": "5.78",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "Gene_Y_Expression",
+                "sample": "3.21",
+                "recommendedType": {
+                  "type": "float"
+                }
+              },
+              {
+                "name": "SmokingStatus",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "DiseaseStatus",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "TreatmentResponse",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "PatientID",
+              "property": {
+                "$ref": "#p:1"
+              }
+            },
+            {
+              "fieldName": "Age",
+              "property": {
+                "$ref": "#p:2"
+              }
+            },
+            {
+              "fieldName": "Gender",
+              "property": {
+                "$ref": "#p:3"
+              }
+            },
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "Gene_X_Expression"
+            },
+            {
+              "property": {
+                "$ref": "#p:8"
+              },
+              "fieldName": "Gene_Y_Expression"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "DiseaseStatus",
+              "property": {
+                "$ref": "#p:4"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "SmokingStatus",
+              "property": {
+                "$ref": "#p:5"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [
+            {
+              "fieldName": "TreatmentResponse",
+              "property": {
+                "$ref": "#p:6"
+              }
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [],
+          "fromMappings": {
+            "#p:1": "PatientID"
+          },
+          "toMappings": {
+            "#p:4": "DiseaseStatus"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [],
+          "fromMappings": {
+            "#p:1": "PatientID"
+          },
+          "toMappings": {
+            "#p:5": "SmokingStatus"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "Gene Expression Analysis and Disease Relationship.csv",
+          "propertyMappings": [],
+          "fromMappings": {
+            "#p:1": "PatientID"
+          },
+          "toMappings": {
+            "#p:6": "TreatmentResponse"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
