@@ -9,6 +9,10 @@ This project explores the use of graph databases in biomedical data modelling us
 The project demonstrates how graph databases can represent complex biomedical relationships more intuitively than traditional relational databases.
 
 ---
+## Biomedical Knowledge Graph
+
+![Graph Visualisation](screenshots/graph_visualisation.png)
+---
 
 ## Objectives
 
